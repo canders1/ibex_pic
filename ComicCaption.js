@@ -6,7 +6,7 @@ var __Question_callback__ = null;
 var __Questions_answers__ = null;
 
 define_ibex_controller({
-name: "PictureAccept",
+name: "ComicCaption",
 
 jqueryWidget: {
     _init: function () {
