@@ -5,6 +5,7 @@ name: "ComicCaption",
 
 jqueryWidget: {
     _init: function () {
+    	debugger;
         var opts = {
             options:     this.options,
             triggers:    [1],
@@ -24,10 +25,7 @@ jqueryWidget: {
                             instructions:        this.options.instructions,
                             leftComment:         this.options.leftComment,
                             rightComment:        this.options.rightComment
-            						  }]/*,
-            manipulators: [
-                [0, function(div) { div.css('font-size', "larger"); return div; }]
-            ]*/
+            						  }]
         };
 
         this.element.VBox(opts);
