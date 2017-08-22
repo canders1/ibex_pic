@@ -14,14 +14,13 @@ jqueryWidget: {
         this.utils = this.options._utils;
         this.finishedCallback = this.options._finishedCallback;
 
-        var questionField = "Sentence";
-        var answerField = "Chosen picture (Starting from 1)";
+        var imageField = "Comic";
+        var questionField = "Question";
+        var answerField = "Answer";
         var correctField = "Whether or not answer was correct (NULL if N/A)";
         var timeField = "Time taken to answer.";
 
         this.question = dget(this.options, "s");
-        this.answers = this.options.as;
-        //assert(this.answers.length == 2, "PictureAccept only works with 2 pictures!");
 
         this.hasCorrect = dget(this.options, "hasCorrect", false);
         // hasCorrect is either false, indicating that there is no correct answer,
