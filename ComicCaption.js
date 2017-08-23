@@ -8,11 +8,10 @@ jqueryWidget: {
     	debugger;
         this.cssPrefix = this.options._cssPrefix;
         this.utils = this.options._utils;
-        var fullhtml = "<p><img class=\"img-responsive\" src=\"".concat(this.options.html).concat("\"></p>");
+        var fullhtml = "<img class=\"".concat(this.cssPrefix+"img").concat("\" src=\"").concat(this.options.html).concat("\">");
         console.log(fullhtml);
         var opts = {
             options:     this.options,
-            padding: "1em",
             triggers:    [2],
             children:    [
                         "Message", 
@@ -47,10 +46,12 @@ properties: {
     obligatory: ["s", "as", "q", "html"],
     htmlDescription:
         function (opts) {
+            var m = ibex_controller_get_property("Message", "htmlDescription")(opts);
             var s = ibex_controller_get_property("FlashSentence", "htmlDescription")(opts);
             var q = ibex_controller_get_property("Question", "htmlDescription")(opts);
             var p =
                 $(document.createElement("div"))
+                .append(("M: ").append($(m)))
                 .append($("<p>").append("Q: ").append($(q)))
                 .append("<br>").append($("<b>").text("S:"))
                 .append($(s));

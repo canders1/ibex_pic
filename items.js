@@ -10,7 +10,7 @@ var items = [
 /// Stimuli go below here.
 
 [["i",0],"AcceptabilityJudgment",{s: "Last week if it isn't."}],
-["fill","ComicCaption",{s: "Kate said that the package would arrive.", q: "Will it?", html: "http://canders1.github.io/img/123.JPG"}],
+["fill","ComicCaption",{s: "Kate said that the package would arrive.", q: "Will it?", html: "https://imgs.xkcd.com/comics/quotative_like.png"}],
 ["fill","AcceptabilityJudgment",{s: "Kate said that the package would arrive."}],
 ["end", "Message", {transfer: 2000,
                 html: ["div",
