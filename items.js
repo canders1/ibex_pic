@@ -10,8 +10,7 @@ var items = [
 /// Stimuli go below here.
 
 [["i",0],"AcceptabilityJudgment",{s: "Last week if it isn't."}],
-["fill","ComicCaption",{s: "Kate said that the package would arrive.", q: "Will it?", html: "https://imgs.xkcd.com/comics/quotative_like.png"}],
-["fill","AcceptabilityJudgment",{s: "Kate said that the package would arrive."}],
+["fill","ComicCaption",{s: "xkcd said that linguists are pretty hardcore.", q: "Are they?", html: "https://imgs.xkcd.com/comics/quotative_like.png"}],
 ["end", "Message", {transfer: 2000,
                 html: ["div",
                         ["p", "All done!"]
@@ -37,6 +36,9 @@ var defaults = [
     },
     "ComicCaption", {
         as: ["1", "2", "3", "4", "5", "6", "7"],
-        presentAsScale: true
+        presentAsScale: true,
+        instructions: "Use a number key or click on a box.",
+        leftComment: "(Very unnatural)",
+        rightComment: "(Very natural)"
     }
 ];
