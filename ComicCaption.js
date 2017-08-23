@@ -1,15 +1,14 @@
-/* This software is licensed under a BSD license; see the LICENSE file for details. */
+/* This controller is designed to run AcceptabilityJudgment tasks with comics.*/
 
 define_ibex_controller({
 name: "ComicCaption",
 
 jqueryWidget: {
     _init: function () {
-    	debugger;
         this.cssPrefix = this.options._cssPrefix;
         this.utils = this.options._utils;
-        var fullhtml = "<img class=\"".concat(this.cssPrefix+"img").concat("\" src=\"").concat(this.options.html).concat("\">");
-        console.log(fullhtml);
+        var fullhtml = "<img class=\"".concat(this.cssPrefix+"img").concat("\" src=\"").concat(this.options.html).concat("\">");//Build full html object from the url provided in items
+        //console.log(fullhtml); //Make sure url is correct
         var opts = {
             options:     this.options,
             triggers:    [2],

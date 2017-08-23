@@ -1,3 +1,5 @@
+/*Alex Drummond's controller for preloading images*/
+
 define_ibex_controller({
     name: "Preloader",
     jqueryWidget: {
