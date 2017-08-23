@@ -8,18 +8,20 @@ jqueryWidget: {
     	debugger;
         this.cssPrefix = this.options._cssPrefix;
         this.utils = this.options._utils;
+        var fullhtml = "<p><img class=\"img-responsive\" src=\"".concat(this.options.html).concat("\"></p>");
+        console.log(fullhtml);
         var opts = {
             options:     this.options,
-            padding: "2em",
+            padding: "1em",
             triggers:    [2],
             children:    [
                         "Message", 
-                            {html : this.options.html,
-                            transfer: dget(this.options, "transfer", null),
-                            consentRequired: dget(this.options, "consentRequired",false)},
+                            {html : fullhtml,
+                            transfer: null,
+                            consentRequired: false},
                         "FlashSentence",
                             {s: this.options.s,
-                            timeout: null, // Already present for 'Question'
+                            timeout: null,
                             audio: this.options.audio,
                             audioMessage: this.options.audioMessage,
                             audioTrigger: this.options.audioTrigger},
@@ -37,9 +39,7 @@ jqueryWidget: {
                             leftComment:         this.options.leftComment,
                             rightComment:        this.options.rightComment}
                             ]};
-        console.log("Before");
         this.element.VBox(opts);
-        console.log("After");
     }
 },
 
@@ -47,16 +47,13 @@ properties: {
     obligatory: ["s", "as", "q", "html"],
     htmlDescription:
         function (opts) {
-        	var m = ibex_controller_get_property("Message", "htmlDescription")(opts);
             var s = ibex_controller_get_property("FlashSentence", "htmlDescription")(opts);
             var q = ibex_controller_get_property("Question", "htmlDescription")(opts);
             var p =
                 $(document.createElement("div"))
-                .append($("<p>").append("M: ").append($(m)))
                 .append($("<p>").append("Q: ").append($(q)))
                 .append("<br>").append($("<b>").text("S:"))
                 .append($(s));
              return p;
-        }
-}
+        }}
 });
