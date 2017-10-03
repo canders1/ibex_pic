@@ -16,7 +16,8 @@ jqueryWidget: {
                         "Message", 
                             {html : fullhtml,
                             transfer: null,
-                            consentRequired: false},
+                            consentRequired: false,
+                            cssPrefix: "ComicCaption"+this.options.cssPrefix,},
                         "FlashSentence",
                             {s: this.options.s,
                             timeout: null,
@@ -35,7 +36,8 @@ jqueryWidget: {
                             timeout:             this.options.timeout,
                             instructions:        this.options.instructions,
                             leftComment:         this.options.leftComment,
-                            rightComment:        this.options.rightComment}
+                            rightComment:        this.options.rightComment,
+                            }
                             ]};
         this.element.VBox(opts);
     }
